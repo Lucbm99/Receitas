@@ -1,0 +1,18 @@
+<div class="conteudo-fundo">
+    <div *ngIf="showLoading" class="spinner">
+        <mat-spinner></mat-spinner>
+    </div>
+
+    <h2 class="apostolo">Evangelho segundo: {{versoBiblia?.reference}}</h2>
+    <mat-card class="texto-evangelho" *ngIf="!versoBiblia?.text">Evangelho inexistente.</mat-card>
+    <mat-card class="texto-evangelho" *ngIf="versoBiblia?.text">{{versoBiblia?.text}}</mat-card>
+
+    <div class="alterar-evangelho">
+        <button 
+            mat-raised-button  
+            (click)="getEvangelhoAleatorio()" 
+            color="primary">
+            Alterar evangelho
+        </button>
+    </div>
+</div>
