@@ -1,0 +1,30 @@
+.conteudo-fundo {
+    // background-image: url("../../../assets/fundo.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.spinner {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.main { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem;
+    gap: 3rem;
+}
+.receita-titulo {
+    font-size: 1.5rem;
+    text-align: left;
+    font-family: 'Cabin', sans-serif;
+    color: #111;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 16rem;
+}

@@ -1,0 +1,12 @@
+<div class="conteudo-fundo">
+    <div *ngIf="showLoading" class="spinner">
+        <mat-spinner></mat-spinner>
+    </div>
+
+    <main class="main">
+        <div *ngFor="let receita of nomesReceitas">
+            <h2 class="receita-titulo" title="{{receita}}">{{receita}}</h2>
+            <button mat-raised-button color="primary">Ver detalhes</button>
+        </div>
+    </main>
+</div>

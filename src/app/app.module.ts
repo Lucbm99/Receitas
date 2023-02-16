@@ -9,12 +9,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar'
-import { VersiculoBibliaComponent } from './components/versiculo-biblia/versiculo-biblia.component';
+import { ReceitasComponent } from './components/receitas/receitas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VersiculoBibliaComponent,
+    ReceitasComponent,
   ],
   imports: [
     BrowserModule,
