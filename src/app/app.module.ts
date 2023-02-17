@@ -10,17 +10,21 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { ReceitasComponent } from './components/receitas/receitas.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModalDetalhesReceitasComponent } from './components/receitas/modal-detalhes-receitas/modal-detalhes-receitas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReceitasComponent,
+    ModalDetalhesReceitasComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatDialogModule,
     MatButtonModule,
     MatProgressSpinnerModule, 
     MatCardModule, 

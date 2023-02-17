@@ -1,5 +1,7 @@
+import { ModalDetalhesReceitasComponent } from './modal-detalhes-receitas/modal-detalhes-receitas.component';
 import { Component, OnInit } from '@angular/core';
 import { ReceitasService } from 'src/app/services/receitas.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-receitas',
@@ -14,6 +16,7 @@ export class ReceitasComponent implements OnInit {
 
   constructor(
     private _receitasService: ReceitasService,
+    private _matDialog: MatDialog,
   ) { }
 
   ngOnInit(): void {
@@ -21,14 +24,22 @@ export class ReceitasComponent implements OnInit {
       if (response) {
         this.showLoading = false;
       }
-      this.receitas = response;
-
-      this.getNomesReceitas(); 
+      this.receitas = response.slice(1, 1000)
+      let remove = this.receitas.filter((value: { nome: any; }, index: any, self: any[]) =>
+      index === self.findIndex((t: { nome: any }) => (
+        t.nome === value.nome
+      ))
+    )
+      console.log(remove)
     })
   }
 
-  getNomesReceitas() {
-    let nomesReceitas = this.receitas.map((item: { nome: any; }) => item.nome)
-    this.nomesReceitas = nomesReceitas;
+
+  exibirDetalhesReceitas(receita: any) {
+    const dialogRef = this._matDialog.open(ModalDetalhesReceitasComponent, {
+      data: { receita },
+      width: '60vw',
+    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 }

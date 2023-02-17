@@ -4,9 +4,11 @@
     </div>
 
     <main class="main">
-        <div *ngFor="let receita of nomesReceitas">
-            <h2 class="receita-titulo" title="{{receita}}">{{receita}}</h2>
-            <button mat-raised-button color="primary">Ver detalhes</button>
+        <div *ngFor="let receita of receitas">
+            <h2 class="receita-titulo" title="{{receita.nome}}">{{receita.nome}}</h2>
+            <button 
+            (click)="exibirDetalhesReceitas(receita)" 
+            mat-raised-button color="primary">Ver detalhes</button>
         </div>
     </main>
 </div>
