@@ -1,9 +1,5 @@
 .conteudo-fundo {
-    // background-image: url("../../../assets/fundo.jpg");
-    height: 100%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #D26B2F;
 }
 .spinner {
     display: flex;
@@ -15,8 +11,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 2rem;
+    padding: 2rem;
     gap: 3rem;
+}
+.box-receitas {
+    display: flex;
+    flex-direction: column;
 }
 .receita-titulo {
     font-size: 1.5rem;

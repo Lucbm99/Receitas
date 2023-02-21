@@ -8,6 +8,9 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 })
 export class ModalDetalhesReceitasComponent {
   public detalhesReceita; 
+  public ingredientes: any;
+  public modoPreparo: any;
+  public outrasInformacoes: any;
 
   constructor(
     public matDialogRef: MatDialogRef<ModalDetalhesReceitasComponent>,
@@ -15,12 +18,25 @@ export class ModalDetalhesReceitasComponent {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { 
     this.detalhesReceita = data;
-    console.log(this.detalhesReceita);
+    console.log("Dados modal: ", this.detalhesReceita);
   }
 
   ngOnInit(): void {
+    this.getIngredientes(); 
   }
 
+  getIngredientes() {
+    console.log("Dados modal ingrediente: ", this.detalhesReceita.receita.secao);
+
+    let ingredientesReceita = this.detalhesReceita.receita.secao.map((item: { conteudo: any; }) => item.conteudo)
+    
+    this.ingredientes = ingredientesReceita[0];
+    this.modoPreparo = ingredientesReceita[1];
+
+    if(ingredientesReceita.length > 2) {
+      this.outrasInformacoes = ingredientesReceita[2];
+    }
+  }
   fecharModalReceitas(): void {
     this.matDialogRef.close();
   }

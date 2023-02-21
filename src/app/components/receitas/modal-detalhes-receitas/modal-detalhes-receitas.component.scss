@@ -5,12 +5,17 @@
     justify-content: center;
     background-color: rgb(79, 70, 229);
     font-family: 'Oswald', sans-serif;
+    color: #fff;
 }
 .footer-modal {
     background-color: rgb(79, 70, 229);
 }
-h3 {
+.close-modal {
+    color: #fff !important;
+}
+h2, h3, h4, h5, p {
     font-family: 'Oswald', sans-serif;
+    color: #111;
 }
 li, p, span {
     font-family: 'Fira Sans', sans-serif;

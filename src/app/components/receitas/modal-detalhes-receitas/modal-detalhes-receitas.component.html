@@ -1,7 +1,19 @@
-<h2 mat-dialog-title>Informações - Receita: </h2>
+<h1 mat-dialog-title class="header-modal">Informações - Receita: {{ detalhesReceita.receita.nome }}</h1>
 <mat-dialog-content class="mat-typography">
+    
+    <h2 *ngIf="ingredientes">Ingredientes</h2>
+        <p *ngIf="ingredientes">{{ ingredientes }}</p>
+    <br><br>
+    <hr>
+    
+    <h3 *ngIf="modoPreparo">Modo de preparo</h3>
+        <p *ngIf="modoPreparo"> {{ modoPreparo }}</p>
+    <hr>
 
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Fechar</button>
+    <h4 *ngIf="outrasInformacoes">Outras informações</h4>
+        <p *ngIf="outrasInformacoes"> {{ outrasInformacoes }}</p>
+    
+    </mat-dialog-content>
+<mat-dialog-actions align="end" class="footer-modal">
+    <button mat-button mat-dialog-close class="close-modal">Fechar</button>
 </mat-dialog-actions>
