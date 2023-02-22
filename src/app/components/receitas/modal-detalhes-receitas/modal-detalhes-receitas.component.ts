@@ -26,10 +26,14 @@ export class ModalDetalhesReceitasComponent {
   }
 
   getIngredientes() {
-    console.log("Dados modal ingrediente: ", this.detalhesReceita.receita.secao);
+    console.log("Dados modal ingrediente: ", this.detalhesReceita.receita.secao[0].conteudo.filter((entry: string) => /\S/.test(entry)));
 
-    let ingredientesReceita = this.detalhesReceita.receita.secao.map((item: { conteudo: any; }) => item.conteudo)
-    
+    let ingredientesReceita = this.detalhesReceita.receita.secao.map(
+    (item: { conteudo: any; }) => 
+      item.conteudo
+    ).filter((entry: string) => /\S/.test(entry)); 
+
+
     this.ingredientes = ingredientesReceita[0];
     this.modoPreparo = ingredientesReceita[1];
 

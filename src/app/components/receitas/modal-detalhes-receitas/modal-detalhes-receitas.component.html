@@ -1,17 +1,18 @@
 <h1 mat-dialog-title class="header-modal">Informações - Receita: {{ detalhesReceita.receita.nome }}</h1>
 <mat-dialog-content class="mat-typography">
     
-    <h2 *ngIf="ingredientes">Ingredientes</h2>
+    <h2>Ingredientes</h2>
         <p *ngIf="ingredientes">{{ ingredientes }}</p>
-    <br><br>
+        <p *ngIf="!ingredientes">-</p>
     <hr>
     
-    <h3 *ngIf="modoPreparo">Modo de preparo</h3>
+    <h3>Modo de preparo</h3>
         <p *ngIf="modoPreparo"> {{ modoPreparo }}</p>
+        <p *ngIf="!modoPreparo">-</p>
     <hr>
 
     <h4 *ngIf="outrasInformacoes">Outras informações</h4>
-        <p *ngIf="outrasInformacoes"> {{ outrasInformacoes }}</p>
+        <p *ngIf="outrasInformacoes">{{ outrasInformacoes }}</p>
     
     </mat-dialog-content>
 <mat-dialog-actions align="end" class="footer-modal">

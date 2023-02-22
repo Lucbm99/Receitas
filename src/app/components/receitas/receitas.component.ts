@@ -11,8 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class ReceitasComponent implements OnInit {
 
   public receitas: any;
-  public nomesReceitas: string = '';
-  showLoading : boolean = true;
+  showLoading: boolean = true;
 
   constructor(
     private _receitasService: ReceitasService,
@@ -21,19 +20,30 @@ export class ReceitasComponent implements OnInit {
 
   ngOnInit(): void {
     this._receitasService.getReceitas().subscribe((response) => {
-      if (response) {
-        this.showLoading = false;
-      }
-      this.receitas = response.slice(1, 1000)
-      let remove = this.receitas.filter((value: { nome: any; }, index: any, self: any[]) =>
-      index === self.findIndex((t: { nome: any }) => (
-        t.nome === value.nome
-      ))
-    )
-      console.log(remove)
+      this.exibirSpinnerLoading(response);
+      this.pegandoApenasAlgumasReceitas(response)
+      this.removerReceitasDuplicadas();
     })
   }
 
+  exibirSpinnerLoading(response: any) {
+    if (response) {
+      this.showLoading = false;
+    }
+  }
+
+  pegandoApenasAlgumasReceitas(response: any) {
+    this.receitas = response.slice(1, 403)
+  }
+
+  removerReceitasDuplicadas() {
+    let filtrandoReceitasDuplicadas = this.receitas.filter(
+    (value: { nome: any; }, index: any, array: any[]) => 
+      index == array.findIndex((item: { nome: any; }) => 
+        item.nome == value.nome
+    ));
+    this.receitas = filtrandoReceitasDuplicadas; 
+  }
 
   exibirDetalhesReceitas(receita: any) {
     const dialogRef = this._matDialog.open(ModalDetalhesReceitasComponent, {
