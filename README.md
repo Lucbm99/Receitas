@@ -33,7 +33,7 @@ NPM: https://npmjs.com
 ## 3 - Feita a instalação do NPM, é necessário digitar o comando ng serve, para abrir a aplicação, que estará disponível em http://localhost:4200 em seu computador. 
 
 
-![image](https://user-images.githubusercontent.com/45500959/184269943-28e4f6d5-1011-4785-a091-5156c462cfac.png)
+![image](https://user-images.githubusercontent.com/45500959/220796093-6ab14756-eafa-43ca-b6cd-5c640d59d0da.png)
 
 
 ## 📦 Status da aplicação
