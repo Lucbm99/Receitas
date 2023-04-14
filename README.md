@@ -40,7 +40,7 @@ NPM: https://npmjs.com
 
 🚧 Finalizado 🚧
 
-Link para acesso: https://receitas-pi6v.vercel.app/
+Link para acesso: https://receitas-pi6v.vercel.app
 
 
 ## 🛠️ Feito com
